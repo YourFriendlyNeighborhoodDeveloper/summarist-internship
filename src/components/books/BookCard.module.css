@@ -1,0 +1,60 @@
+.card {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 32px 12px 12px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.card:hover {
+  background-color: #f1f6f4;
+}
+
+.card:focus-visible {
+  outline-offset: -3px;
+}
+
+.cover {
+  margin: 0 auto 8px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #032b41;
+  margin-bottom: 8px;
+}
+
+.author {
+  font-size: 14px;
+  color: #6b757b;
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+
+.subTitle {
+  font-size: 14px;
+  color: #394547;
+  margin-bottom: 8px;
+}
+
+.details {
+  display: flex;
+  gap: 8px;
+}
+
+.detail {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 300;
+  color: #6b757b;
+}
+
+.detail svg {
+  width: 16px;
+  height: 16px;
+}

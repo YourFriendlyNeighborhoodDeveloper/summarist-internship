@@ -1,0 +1,47 @@
+.cover {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.image[data-loaded="true"] {
+  opacity: 1;
+}
+
+.placeholder {
+  position: absolute;
+  inset: 0;
+  width: 70%;
+  margin: 0 auto;
+  border-radius: 4px;
+}
+
+.fallback {
+  position: absolute;
+  inset: 0;
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  background-color: #e1e7ea;
+  color: #6b757b;
+}
+
+.fallback svg {
+  width: 40%;
+  height: 40%;
+}

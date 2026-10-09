@@ -1,0 +1,38 @@
+{
+  "name": "summarist-internship",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "test:e2e": "firebase emulators:exec --only auth,firestore --project demo-summarist \"playwright test\"",
+    "test:e2e:ui": "firebase emulators:exec --only auth,firestore --project demo-summarist \"playwright test --ui\"",
+    "emulators": "firebase emulators:start --only auth,firestore --project demo-summarist"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.13.0",
+    "firebase": "^13.0.0",
+    "firebase-admin": "^14.5.0",
+    "next": "16.4.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "react-icons": "^5.7.0",
+    "react-redux": "^9.3.0",
+    "stripe": "^23.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.0"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "overrides": {
+    "@firebase/firestore": {
+      "@grpc/grpc-js": "^1.14.6"
+    }
+  }
+}

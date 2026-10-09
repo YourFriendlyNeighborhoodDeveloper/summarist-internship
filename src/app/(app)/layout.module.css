@@ -1,0 +1,38 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin-left: 200px;
+  width: calc(100% - 200px);
+  transition: margin-left 0.3s, width 0.3s;
+}
+
+.main {
+  flex: 1;
+  outline: none;
+}
+
+.skipLink {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 10001;
+  padding: 8px 16px;
+  border-radius: 4px;
+  background-color: #032b41;
+  color: #fff;
+  transform: translateY(-200%);
+}
+
+.skipLink:focus {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    margin-left: 0;
+    width: 100%;
+  }
+}

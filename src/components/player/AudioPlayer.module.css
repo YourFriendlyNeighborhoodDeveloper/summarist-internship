@@ -1,0 +1,213 @@
+.player {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 80px;
+  padding: 0 40px;
+  background-color: #042330;
+}
+
+.player > div {
+  width: calc(100% / 3);
+}
+
+.player :focus-visible {
+  outline-color: #fff;
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.trackDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  min-width: 0;
+  color: #fff;
+  font-size: 14px;
+}
+
+.trackTitle,
+.trackAuthor {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.trackAuthor {
+  color: #bac8ce;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.controlButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #fff;
+}
+
+.controlButton svg {
+  width: 28px;
+  height: 28px;
+  stroke: #fff;
+  transition: stroke 0.2s, color 0.2s;
+}
+
+.controlButton svg path {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+.controlButton:hover:not(:disabled) svg,
+.controlButton:hover:not(:disabled) svg path {
+  stroke: #2bd97c;
+}
+
+.playButton {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  color: #042330;
+}
+
+.playButton svg,
+.playButton svg path {
+  stroke: none;
+  width: 24px;
+  height: 24px;
+}
+
+.playButton:hover:not(:disabled) svg,
+.playButton:hover:not(:disabled) svg path {
+  stroke: none;
+  color: #20ba68;
+}
+
+.playIcon {
+  margin-left: 4px;
+}
+
+.playSpinner {
+  color: #042330;
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.retry {
+  padding: 6px 12px;
+  border-radius: 4px;
+  background-color: #2bd97c;
+  color: #032b41;
+  font-size: 14px;
+}
+
+.progressWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.time {
+  color: #fff;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+
+.progress {
+  width: 100%;
+  max-width: 300px;
+  height: 4px;
+  border-radius: 8px;
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.progress:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+.progress::-webkit-slider-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  background-color: #2bd97c;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.progress::-moz-range-track {
+  background: transparent;
+}
+
+.progress::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  background-color: #2bd97c;
+}
+
+.progress:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+.rate {
+  min-width: 44px;
+  padding: 4px 6px;
+  border: 1px solid #6d787d;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.rate:hover {
+  border-color: #2bd97c;
+}
+
+@media (max-width: 768px) {
+  .player {
+    flex-direction: column;
+    gap: 12px;
+    height: 180px;
+    padding: 16px 24px;
+  }
+
+  .player > div {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .progressWrapper {
+    gap: 12px;
+  }
+}

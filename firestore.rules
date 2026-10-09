@@ -1,0 +1,46 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isOwner(uid) {
+      return request.auth != null && request.auth.uid == uid;
+    }
+
+    function isValidShelfEntry(bookId, timestampField) {
+      let data = request.resource.data;
+      let fields = ['bookId', 'title', 'author', 'subTitle', 'imageLink', 'audioLink',
+        'averageRating', 'subscriptionRequired', timestampField];
+      return data.keys().hasAll(fields)
+        && data.keys().hasOnly(fields)
+        && bookId.matches('^[A-Za-z0-9_-]{1,64}$')
+        && data.bookId == bookId
+        && data.title is string && data.title.size() > 0 && data.title.size() <= 300
+        && data.author is string && data.author.size() <= 300
+        && data.subTitle is string && data.subTitle.size() <= 500
+        && data.imageLink is string && data.imageLink.size() <= 2048
+        && data.audioLink is string && data.audioLink.size() <= 2048
+        && (data.averageRating == null || data.averageRating is number)
+        && data.subscriptionRequired is bool
+        && data[timestampField] == request.time;
+    }
+
+    match /users/{uid}/library/{bookId} {
+      allow read, delete: if isOwner(uid);
+      allow create, update: if isOwner(uid) && isValidShelfEntry(bookId, 'savedAt');
+    }
+
+    match /users/{uid}/finished/{bookId} {
+      allow read, delete: if isOwner(uid);
+      allow create, update: if isOwner(uid) && isValidShelfEntry(bookId, 'finishedAt');
+    }
+
+    match /subscriptions/{uid} {
+      allow read: if isOwner(uid);
+      allow write: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

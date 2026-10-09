@@ -1,0 +1,17 @@
+.title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #032b41;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-weight: 300;
+  color: #394547;
+  margin-bottom: 16px;
+}
+
+.empty {
+  color: #394547;
+  margin-bottom: 32px;
+}

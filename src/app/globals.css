@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-roboto), Roboto, sans-serif;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  background-color: #fff;
+  color: #032b41;
+}
+
+:where(a) {
+  text-decoration: none;
+  color: inherit;
+}
+
+:where(ul) {
+  list-style: none;
+}
+
+:where(img) {
+  max-width: 100%;
+}
+
+:where(button) {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: inherit;
+}
+
+:where(button:active:not(:disabled, [aria-disabled="true"])) {
+  transform: translateY(1px);
+}
+
+:where(button:disabled) {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+:where(button[aria-disabled="true"]) {
+  cursor: not-allowed;
+}
+
+:where(input) {
+  outline: none;
+  font-size: 14px;
+}
+
+:focus-visible {
+  outline: 3px solid #0365f2;
+  outline-offset: 2px;
+}
+
+input:focus-visible {
+  outline: none;
+}
+
+:where(.row) {
+  max-width: 1070px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+:where(.container) {
+  padding: 40px 0;
+  width: 100%;
+}
+
+:where(.btn) {
+  background-color: #2bd97c;
+  color: #032b41;
+  width: 100%;
+  height: 40px;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+}
+
+:where(.btn):hover:not(:disabled) {
+  background-color: #20ba68;
+}
+
+:where(.section-title) {
+  font-size: 32px;
+  color: #032b41;
+  text-align: center;
+  margin-bottom: 32px;
+  font-weight: 700;
+}
+
+:where(.skeleton) {
+  background-color: #e4e4e4;
+  background-image: linear-gradient(90deg, #e4e4e4 0%, #efefef 50%, #e4e4e4 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}
+
+@media (max-width: 768px) {
+  :where(input) {
+    font-size: 16px;
+  }
+
+  :where(.section-title) {
+    font-size: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

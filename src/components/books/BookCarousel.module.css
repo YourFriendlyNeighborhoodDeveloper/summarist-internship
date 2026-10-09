@@ -1,0 +1,80 @@
+.carousel {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+.item {
+  position: relative;
+  flex: 0 0 196px;
+  scroll-snap-align: start;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
+  color: #394547;
+  transform: translateY(-50%);
+  transition: background-color 0.2s;
+}
+
+.arrow:hover {
+  background-color: #f1f6f4;
+}
+
+.arrow:active:not(:disabled) {
+  transform: translateY(calc(-50% + 1px));
+}
+
+.arrow svg {
+  width: 18px;
+  height: 18px;
+}
+
+.arrowLeft {
+  left: -18px;
+}
+
+.arrowRight {
+  right: -18px;
+}
+
+.skeletonRow {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  overflow-x: hidden;
+  margin-bottom: 32px;
+}
+
+.skeletonCard {
+  min-width: 200px;
+  width: 200px;
+}
+
+@media (hover: none) {
+  .arrow {
+    display: none;
+  }
+}

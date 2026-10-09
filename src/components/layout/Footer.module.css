@@ -1,0 +1,45 @@
+.footer {
+  background-color: #f1f6f4;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin: 32px auto 64px;
+}
+
+.title {
+  font-weight: 700;
+  margin-bottom: 16px;
+  font-size: 18px;
+  color: #032b41;
+}
+
+.linkWrapper {
+  margin-bottom: 12px;
+  line-height: 1;
+}
+
+.linkWrapper:last-child {
+  margin-bottom: 0;
+}
+
+.link {
+  color: #394547;
+  font-size: 14px;
+  cursor: not-allowed;
+}
+
+.copyright {
+  text-align: center;
+  color: #032b41;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .top {
+    flex-direction: column;
+    gap: 32px;
+  }
+}

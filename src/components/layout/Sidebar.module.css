@@ -1,0 +1,166 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: #3a4649;
+  opacity: 0.65;
+  z-index: 999;
+  pointer-events: auto;
+  transition: opacity 0.4s ease;
+}
+
+.overlayHidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  min-width: 200px;
+  height: 100vh;
+  height: 100dvh;
+  background-color: #f7faf9;
+  z-index: 1000;
+  transition: transform 0.3s, width 0.3s, visibility 0.3s;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  padding-top: 16px;
+  max-width: 160px;
+  margin: 0 auto;
+}
+
+.logo img {
+  width: 100%;
+  height: 40px;
+  object-fit: contain;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100vh - 60px);
+  height: calc(100dvh - 60px);
+  padding-bottom: 20px;
+  overflow-y: auto;
+}
+
+.withPlayer .wrapper {
+  height: calc(100vh - 140px);
+  height: calc(100dvh - 140px);
+}
+
+.top {
+  flex: 1;
+  margin-top: 40px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 56px;
+  margin-bottom: 8px;
+  color: #032b41;
+  font-size: 16px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.item:hover {
+  background-color: #f0efef;
+}
+
+li:last-child > .item {
+  margin-bottom: 0;
+}
+
+.notAllowed {
+  cursor: not-allowed;
+}
+
+.notAllowed:hover {
+  background-color: transparent;
+}
+
+.item:focus-visible {
+  outline-offset: -3px;
+}
+
+.line {
+  width: 5px;
+  height: 100%;
+  margin-right: 16px;
+  background-color: transparent;
+}
+
+.lineActive {
+  background-color: #2bd97c;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+}
+
+.icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.fontSizes {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 56px;
+  margin-left: 24px;
+}
+
+.fontSize {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: #032b41;
+  border-bottom: 3px solid transparent;
+}
+
+.fontSizeActive {
+  border-bottom-color: #2bd97c;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    visibility: hidden;
+    transition: transform 0.3s, width 0.3s, visibility 0s linear 0.3s;
+  }
+
+  .opened {
+    transform: translateX(0);
+    visibility: visible;
+    width: 80%;
+    transition: transform 0.3s, width 0.3s, visibility 0s;
+  }
+
+  .withPlayer .wrapper {
+    height: calc(100vh - 240px);
+    height: calc(100dvh - 240px);
+  }
+}
+
+@media (min-width: 769px) {
+  .overlay {
+    display: none;
+  }
+}

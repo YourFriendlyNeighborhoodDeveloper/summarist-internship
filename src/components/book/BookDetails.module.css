@@ -1,0 +1,219 @@
+.wrapper {
+  display: flex;
+  gap: 16px;
+}
+
+.book {
+  width: 100%;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #032b41;
+  margin-bottom: 16px;
+}
+
+.author {
+  color: #032b41;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.subTitle {
+  font-size: 20px;
+  font-weight: 300;
+  color: #032b41;
+  margin-bottom: 16px;
+}
+
+.detailsWrapper {
+  border-top: 1px solid #e1e7ea;
+  border-bottom: 1px solid #e1e7ea;
+  padding: 16px 0;
+  margin-bottom: 24px;
+}
+
+.details {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 400px;
+  row-gap: 12px;
+}
+
+.detail {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  color: #032b41;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.detail svg {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  margin-right: 4px;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.actionButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 144px;
+  height: 48px;
+  border-radius: 4px;
+  background-color: #032b41;
+  color: #fff;
+  font-size: 16px;
+  transition: opacity 0.2s;
+}
+
+.actionButton:hover:not(:disabled) {
+  opacity: 0.8;
+}
+
+.actionButton svg {
+  width: 24px;
+  height: 24px;
+}
+
+.bookmark {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 40px;
+  color: #0365f2;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.bookmark:hover:not(:disabled) {
+  color: #044298;
+}
+
+.bookmark svg {
+  width: 20px;
+  height: 20px;
+}
+
+.secondaryTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #032b41;
+  margin-bottom: 16px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 4px;
+  background-color: #f1f6f4;
+  color: #032b41;
+  font-weight: 500;
+  cursor: not-allowed;
+}
+
+.description {
+  color: #032b41;
+  margin-bottom: 16px;
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+.imageWrapper {
+  flex-shrink: 0;
+}
+
+.backLink {
+  width: auto;
+  margin-top: 8px;
+  padding: 0 24px;
+}
+
+.skeleton {
+  display: flex;
+  gap: 40px;
+}
+
+.skeletonContent {
+  width: 100%;
+}
+
+.skeletonImage {
+  display: flex;
+  justify-content: center;
+}
+
+.skeletonCover {
+  width: 300px;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+@media (max-width: 992px) {
+  .wrapper,
+  .skeleton {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .book,
+  .skeletonContent {
+    order: 1;
+  }
+
+  .imageWrapper {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 24px;
+  }
+
+  .subTitle {
+    font-size: 18px;
+  }
+
+  .author,
+  .description,
+  .tag {
+    font-size: 14px;
+  }
+
+  .bookmark {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 400px) {
+  .actions {
+    gap: 12px;
+  }
+
+  .actionButton {
+    flex: 1;
+    width: auto;
+  }
+}

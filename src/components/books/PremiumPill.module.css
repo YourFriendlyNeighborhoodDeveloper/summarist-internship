@@ -1,0 +1,14 @@
+.pill {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  height: 18px;
+  padding: 0 8px;
+  border-radius: 20px;
+  background-color: #032b41;
+  color: #fff;
+  font-size: 10px;
+}
